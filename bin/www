@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 const http = require('http');
-const debug = require('debug')('backend:server');
+// const debug = require('debug')('backend:server');
 const app = require('../src/app');
 
 /**
@@ -68,8 +68,8 @@ const onError = error => {
 
 const onListening = () => {
   const addr = server.address();
-  const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
-  debug(`Listening on ${bind}`);
+  // const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
+  // debug(`Listening on ${bind}`);
 };
 
 /**
