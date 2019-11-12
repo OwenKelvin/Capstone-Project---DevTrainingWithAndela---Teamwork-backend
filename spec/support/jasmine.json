@@ -1,5 +1,5 @@
 {
-  "spec_dir": "./../backend",
+  "spec_dir": "./",
   "spec_files": [
     "src/routes/**/*[sS]pec.js",
     "src/public/**/*[sS]pec.js",
