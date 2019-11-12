@@ -1,5 +1,7 @@
 # Capstone Project - DevCTraining with Andela - Teamwork
 
+[![Coverage Status](https://coveralls.io/repos/github/OwenKelvin/Capstone-Project---DevTrainingWithAndela---Teamwork-backend/badge.svg?branch=master)](https://coveralls.io/github/OwenKelvin/Capstone-Project---DevTrainingWithAndela---Teamwork-backend?branch=master)
+
 This is our high-quality team API. You can use this API to request edit and delete articles and gifs for the teamwork app
 
 <hr />
