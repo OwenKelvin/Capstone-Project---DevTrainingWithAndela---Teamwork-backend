@@ -19,13 +19,13 @@ Employee/ Admin can signin and get back token
 #### Example request
 
 ```javascript
-require('axios');
+require("axios");
 const postData = {
-  email: 'email216.43518328052647@gmail.com',
-  password: 'password',
+  email: "email216.43518328052647@gmail.com",
+  password: "password"
 };
 axios
-  .post('https://capstone-project-teamwork.herokuapp.com/api/v1/auth/signin')
+  .post("https://capstone-project-teamwork.herokuapp.com/api/v1/auth/signin")
   .then(response => {
     // Action on success
   })
@@ -61,25 +61,25 @@ POST /api/v1/auth/create-user
 #### Example request
 
 ```javascript
-require('axios');
+require("axios");
 
 const config = {
   Authorization:
-    'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUwLCJpYXQiOjE1NzM1MjQwNTIwMjV9.wTMED93IC8jtm3NHJEJ1bPDUcIBjoVS3UTXiOFrT670',
+    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUwLCJpYXQiOjE1NzM1MjQwNTIwMjV9.wTMED93IC8jtm3NHJEJ1bPDUcIBjoVS3UTXiOFrT670"
 };
 const postData = {
-  email: 'newemail232@gmail.com', // required
-  password: 'password', // optional
-  jobRole: 'employee', // required; valid options: admin | employee,
-  address: 'Thika Road 484 Plaza', // optional
-  gender: 'M', // optional; valid options: M | F
+  email: "newemail232@gmail.com", // required
+  password: "password", // optional
+  jobRole: "employee", // required; valid options: admin | employee,
+  address: "Thika Road 484 Plaza", // optional
+  gender: "M" // optional; valid options: M | F
 };
 
 axios
   .post(
-    'https://capstone-project-teamwork.herokuapp.com/api/v1/auth/create-user',
+    "https://capstone-project-teamwork.herokuapp.com/api/v1/auth/create-user",
     postData,
-    config,
+    config
   )
   .then(response => {
     // Action on success
@@ -122,14 +122,14 @@ Employee/ Admin can get back a articles/gifs starting from the most recent
 #### Example request
 
 ```javascript
-require('axios');
+require("axios");
 const config = {
   Authorization:
-    'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUwLCJpYXQiOjE1NzM1MjQwNTIwMjV9.wTMED93IC8jtm3NHJEJ1bPDUcIBjoVS3UTXiOFrT670',
+    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUwLCJpYXQiOjE1NzM1MjQwNTIwMjV9.wTMED93IC8jtm3NHJEJ1bPDUcIBjoVS3UTXiOFrT670"
 };
 
 axios
-  .post('https://capstone-project-teamwork.herokuapp.com/api/v1/feed', config)
+  .post("https://capstone-project-teamwork.herokuapp.com/api/v1/feed", config)
   .then(response => {
     // Action on success
   })
@@ -190,20 +190,21 @@ Employee/ Admin can post articles
 #### Example request
 
 ```javascript
-require('axios');
+require("axios");
 const config = {
   Authorization:
-    'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUwLCJpYXQiOjE1NzM1MjQwNTIwMjV9.wTMED93IC8jtm3NHJEJ1bPDUcIBjoVS3UTXiOFrT670',
+    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUwLCJpYXQiOjE1NzM1MjQwNTIwMjV9.wTMED93IC8jtm3NHJEJ1bPDUcIBjoVS3UTXiOFrT670"
 };
 const postData = {
-    title: 'Some Title',
-    article: 'another short article'
+  title: "Some Title",
+  article: "another short article"
 };
 
 axios
   .post(
-    'https://capstone-project-teamwork.herokuapp.com/api/v1/articles', postData,
-    config,
+    "https://capstone-project-teamwork.herokuapp.com/api/v1/articles",
+    postData,
+    config
   )
   .then(response => {
     // Action on success
@@ -241,20 +242,21 @@ Employee/ Admin can edit articles
 #### Example request
 
 ```javascript
-require('axios');
+require("axios");
 const config = {
   Authorization:
-    'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUwLCJpYXQiOjE1NzM1MjQwNTIwMjV9.wTMED93IC8jtm3NHJEJ1bPDUcIBjoVS3UTXiOFrT670',
+    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUwLCJpYXQiOjE1NzM1MjQwNTIwMjV9.wTMED93IC8jtm3NHJEJ1bPDUcIBjoVS3UTXiOFrT670"
 };
 const postData = {
-    title: 'Some Title',
-    article: 'another short article'
+  title: "Some Title",
+  article: "another short article"
 };
 
 axios
   .patch(
-    'https://capstone-project-teamwork.herokuapp.com/api/v1/articles/625', postData,
-    config,
+    "https://capstone-project-teamwork.herokuapp.com/api/v1/articles/625",
+    postData,
+    config
   )
   .then(response => {
     // Action on success
@@ -280,3 +282,87 @@ axios
 ```
 
 <hr />
+
+### GET /article/:articleId
+
+```endpoint
+GET /api/v1/articles/:articleId
+```
+
+Employee/ Admin can get a specific article
+
+> _This api requires an authorization token_
+
+```javascript
+require("axios");
+const config = {
+  Authorization:
+    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUwLCJpYXQiOjE1NzM1MjQwNTIwMjV9.wTMED93IC8jtm3NHJEJ1bPDUcIBjoVS3UTXiOFrT670"
+};
+
+axios
+  .get(
+    "https://capstone-project-teamwork.herokuapp.com/api/v1/articles/625",
+    config
+  )
+  .then(response => {
+    // Action on success
+  })
+  .catch(error => {
+    // Action on error
+  });
+```
+
+#### Example response
+
+````javascript
+{
+    "status": "success",
+    "message": "Articals successfully retrieved",
+    "data": {
+        "id": 625,
+        "articleId": 625,
+        "title": "Some Title",
+        "article": "another short article",
+        "createdOn": "2019-11-11T09:55:25.499Z"
+    }
+}
+
+### DELETE /article/:articleId
+
+```endpoint
+GET /api/v1/articles/:articleId
+````
+
+Employee/ Admin can get delete specific article
+
+> _This api requires an authorization token_
+
+```javascript
+require("axios");
+const config = {
+  Authorization:
+    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUwLCJpYXQiOjE1NzM1MjQwNTIwMjV9.wTMED93IC8jtm3NHJEJ1bPDUcIBjoVS3UTXiOFrT670"
+};
+
+axios
+  .delete(
+    "https://capstone-project-teamwork.herokuapp.com/api/v1/articles/625",
+    config
+  )
+  .then(response => {
+    // Action on success
+  })
+  .catch(error => {
+    // Action on error
+  });
+```
+
+#### Example response
+
+```javascript
+{
+    "status": "success",
+    "message": "Articals successfully retrieved",
+}
+```
