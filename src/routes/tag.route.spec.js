@@ -71,7 +71,9 @@ describe('TAGS ROUTE: ', () => {
           name: `newTag${Math.random() * 10000}`,
         };
         Axios.post(`${apiBase}/tags`, postData, config).catch(e => {
-          data.status = e.response.status;
+          if (e.response) {
+            data.status = e.response.status;
+          }
           done();
         });
       });
@@ -263,12 +265,14 @@ describe('TAGS ROUTE: ', () => {
         };
         Axios.delete(`${apiBase}/tags/${tagId}`, config)
           .catch(e => {
-            data.status = e.response.status;
+            if (e.response.status) {
+              data.status = e.response.status;
+            }
           })
           .finally(() => done());
       });
 
-      it('should return status code 202', () => {
+      it('should return status code 401', () => {
         expect(data.status).toBe(401);
       });
     });
