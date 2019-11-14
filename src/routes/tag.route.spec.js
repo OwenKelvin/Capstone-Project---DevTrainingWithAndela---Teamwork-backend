@@ -71,7 +71,9 @@ describe('TAGS ROUTE: ', () => {
           name: `newTag${Math.random() * 10000}`,
         };
         Axios.post(`${apiBase}/tags`, postData, config).catch(e => {
-          data.status = e.response.status;
+          if (e.response) {
+            data.status = e.response.status;
+          }
           done();
         });
       });
